@@ -1,0 +1,171 @@
+/* Kosheru - Modales y Formularios de Administración */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transicion);
+}
+
+.admin-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.admin-modal-box {
+  background: var(--color-bg-card);
+  border-radius: var(--borde-radio-lg);
+  max-width: 600px;
+  width: 100%;
+  padding: 2.2rem;
+  box-shadow: var(--sombra-elevada);
+  border: 1px solid var(--color-borde-card);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.admin-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.7rem;
+  border-bottom: 1px solid var(--color-borde-card);
+  padding-bottom: 1rem;
+}
+
+.admin-modal-kicker {
+  color: var(--color-dorado);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.admin-modal-title {
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-texto-blanco);
+}
+
+.admin-modal-subtitle {
+  color: var(--color-texto-muted);
+  font-size: 0.82rem;
+  margin-top: 0.25rem;
+}
+
+.admin-modal-close {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  color: var(--color-texto-suave);
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: var(--transicion);
+}
+
+.admin-modal-close:hover {
+  background: var(--color-rojo-kosheru);
+  color: #fff;
+}
+
+.product-form { display: flex; flex-direction: column; gap: 0.15rem; }
+.product-form .form-group { margin-bottom: 1rem; }
+.product-form label {
+  display: block;
+  color: var(--color-texto-blanco);
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 0.45rem;
+}
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"],
+.product-form textarea {
+  width: 100%;
+  border: 1px solid var(--color-borde-input);
+  border-radius: var(--borde-radio-sm);
+  background: var(--color-input-bg);
+  color: var(--color-texto-blanco);
+  padding: 0.72rem 0.85rem;
+  transition: var(--transicion);
+}
+.product-form textarea { resize: vertical; min-height: 96px; }
+.product-form input::placeholder,
+.product-form textarea::placeholder { color: var(--color-texto-muted); }
+.product-form input:focus,
+.product-form textarea:focus {
+  outline: none;
+  border-color: var(--color-rojo-kosheru);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-rojo-kosheru) 18%, transparent);
+}
+.product-form input[type="file"] { padding: 0.5rem; font-size: 0.8rem; }
+.product-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.category-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  padding: 0.75rem;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-borde-card);
+  border-radius: var(--borde-radio-sm);
+}
+
+.category-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-texto-suave);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: var(--borde-radio-sm);
+  transition: var(--transicion);
+}
+
+.category-checkbox:hover {
+  background: var(--color-bg-card);
+  border-color: var(--color-borde-card);
+}
+
+.category-checkbox input {
+  accent-color: var(--color-rojo-kosheru);
+}
+
+@media (max-width: 600px) {
+  .category-checkboxes { grid-template-columns: 1fr; }
+  .product-form-grid { grid-template-columns: 1fr; gap: 0; }
+}
+
+.product-form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-borde-card);
+}
+.product-form-submit { flex: 1; border: none; }
+.product-form-cancel {
+  color: var(--color-texto-blanco);
+  border-color: var(--color-borde-card);
+}
+@media (max-width: 420px) {
+  .admin-modal-box { padding: 1.35rem; }
+  .product-form-actions { flex-direction: column; }
+  .product-form-submit, .product-form-cancel { width: 100%; }
+}

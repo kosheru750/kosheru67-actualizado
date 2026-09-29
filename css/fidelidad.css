@@ -1,0 +1,147 @@
+/* Kosheru - Programa de Fidelidad */
+.fidelidad-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem 4.5rem 2rem;
+}
+.fidelidad-loading {
+  text-align: center;
+  padding: 3rem;
+  font-weight: 700;
+  color: var(--color-texto-suave);
+}
+
+/* ---- Tarjeta de resumen (nivel + puntos + barra de progreso) ---- */
+.loyalty-summary-card {
+  background-color: var(--color-bg-card);
+  border: 1.5px solid var(--color-borde-card);
+  border-radius: var(--borde-radio-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.loyalty-tier-badge {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+  flex-shrink: 0;
+}
+.loyalty-tier-badge.tier-bronce { background: linear-gradient(135deg, #b08d57, #8a6d42); }
+.loyalty-tier-badge.tier-plata  { background: linear-gradient(135deg, #c7cdd6, #9aa3af); }
+.loyalty-tier-badge.tier-oro    { background: linear-gradient(135deg, var(--color-dorado), #b8860b); }
+
+.loyalty-points-value {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--color-texto-blanco);
+  line-height: 1;
+}
+.loyalty-points-label {
+  font-size: 0.85rem;
+  color: var(--color-texto-muted);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.loyalty-tier-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.loyalty-progress-track {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--borde-radio-full);
+  background-color: var(--color-borde-card);
+  overflow: hidden;
+  margin: 0.6rem 0 0.4rem;
+}
+.loyalty-progress-fill {
+  height: 100%;
+  border-radius: var(--borde-radio-full);
+  background: linear-gradient(90deg, var(--color-naranja-terracota), var(--color-dorado));
+  transition: width 0.5s ease;
+}
+.loyalty-progress-text {
+  font-size: 0.8rem;
+  color: var(--color-texto-muted);
+}
+
+/* ---- Recompensas canjeables ---- */
+.loyalty-section-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-texto-blanco);
+  margin-bottom: 1rem;
+}
+.loyalty-rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+.loyalty-reward-card {
+  background-color: var(--color-bg-card);
+  border: 1.5px solid var(--color-borde-card);
+  border-radius: var(--borde-radio-md);
+  padding: 1.4rem;
+  text-align: center;
+  transition: var(--transicion);
+}
+.loyalty-reward-card:hover { border-color: var(--color-rojo-kosheru); transform: translateY(-3px); }
+.loyalty-reward-points { font-size: 1.6rem; font-weight: 900; color: var(--color-rojo-kosheru); }
+.loyalty-reward-label { font-size: 0.92rem; color: var(--color-texto-suave); margin: 0.4rem 0 1rem; font-weight: 700; }
+.btn-loyalty-redeem {
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: var(--borde-radio-full);
+  background-color: var(--color-rojo-kosheru);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.88rem;
+  transition: var(--transicion);
+}
+.btn-loyalty-redeem:hover:not(:disabled) { background-color: var(--color-naranja-terracota); }
+.btn-loyalty-redeem:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ---- Cupones activos ---- */
+.loyalty-coupon-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg-card);
+  border: 1.5px dashed var(--color-dorado);
+  border-radius: var(--borde-radio-sm);
+  padding: 0.8rem 1.1rem;
+  margin-bottom: 0.6rem;
+}
+.loyalty-coupon-code { font-weight: 900; letter-spacing: 0.05em; color: var(--color-texto-blanco); }
+.loyalty-coupon-discount { color: var(--color-exito); font-weight: 700; font-size: 0.88rem; }
+
+/* ---- Historial ---- */
+.loyalty-history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--color-borde-card);
+  font-size: 0.88rem;
+}
+.loyalty-history-desc { color: var(--color-texto-suave); }
+.loyalty-history-date { color: var(--color-texto-muted); font-size: 0.76rem; }
+.loyalty-history-points.earned { color: var(--color-exito); font-weight: 800; }
+.loyalty-history-points.redeemed { color: var(--color-rojo-kosheru); font-weight: 800; }
+
+.loyalty-empty { text-align: center; color: var(--color-texto-muted); font-style: italic; padding: 1.2rem 0; }
+
+@media (max-width: 640px) {
+  .loyalty-summary-card { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+}

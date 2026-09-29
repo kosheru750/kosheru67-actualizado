@@ -1,0 +1,2 @@
+[2026-09-28 03:41:08] Factura: FAC-75422 | Usuario: Administrador Kosheru | Total: $208.012 COP
+[2026-09-29 02:01:29] Factura: FAC-16266 | Usuario: Administrador Kosheru | Total: $245.973 COP

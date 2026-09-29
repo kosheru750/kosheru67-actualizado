@@ -1,0 +1,55 @@
+/* Kosheru - Factura Admin (Reutiliza factura.css) */
+@import url('../../css/factura.css');
+
+.admin-factura-search-card {
+  background: linear-gradient(145deg, var(--color-bg-card), color-mix(in srgb, var(--color-bg-panel) 34%, var(--color-bg-card)));
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid var(--color-borde-card);
+  box-shadow: var(--sombra-elevada);
+  margin-bottom: 2rem;
+}
+
+.invoice-filter-heading { margin-bottom: 1.25rem; }
+.invoice-filter-kicker { margin-bottom: 0.35rem; color: var(--color-dorado); font-size: 0.68rem; font-weight: 900; letter-spacing: 0.12em; }
+.invoice-filter-heading h2 { color: var(--color-texto-blanco); font-family: var(--fuente-titulos); font-size: 1.2rem; font-weight: 800; }
+.invoice-filter-heading > p:last-child { margin-top: 0.3rem; color: var(--color-texto-muted); font-size: 0.84rem; }
+
+.search-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.search-filters-grid .form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--color-texto-suave);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.search-filters-grid .form-group input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-borde-input);
+  border-radius: var(--borde-radio-sm);
+  background: var(--color-input-bg);
+  color: var(--color-texto-blanco);
+  font-size: 0.88rem;
+  transition: var(--transicion);
+}
+
+.search-filters-grid .form-group input:focus {
+  outline: none;
+  border-color: var(--color-dorado);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-dorado) 18%, transparent);
+}
+
+.invoice-filter-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+.invoice-filter-actions button { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; gap: 0.45rem; padding: 0.65rem 1rem; border-radius: var(--borde-radio-sm); font-size: 0.84rem; font-weight: 800; }
+.invoice-filter-actions .btn-primary { border: 0; box-shadow: 0 5px 14px color-mix(in srgb, var(--color-rojo-kosheru) 20%, transparent); }
+.invoice-filter-actions .btn-secondary { border: 1px solid var(--color-borde-card); background: var(--color-bg-card); color: var(--color-texto-suave); }
+.invoice-filter-actions img { width: 16px; height: 16px; }

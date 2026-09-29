@@ -1,0 +1,42 @@
+/* Kosheru - Sistema de Variables de Diseño & Paleta Oficial (v2 - basada en el logo) */
+:root {
+  /* ===== Paleta oficial Kosheru (colores base del logo) ===== */
+  --color-rosa-oscuro: #e82a3d;
+  --color-rosa-claro: #F9546F;
+  --color-verde-oscuro: #439867;
+  --color-verde-claro: #6f9745;
+  --color-naranja-oscuro: #E14B19;
+  --color-naranja-claro: #FF7300;
+  --color-vinotinto: #7C303E;
+  --color-crema: #F7E8E1;
+
+  /* ===== Alias de roles (mantiene compatible todo el CSS existente) =====
+     Rosa y verde ahora son los protagonistas; naranja queda como acento
+     puntual y el vinotinto como color de texto/marca, igual que el logo. */
+  --color-rojo-kosheru: var(--color-rosa-oscuro);   /* color principal / CTA */
+  --color-rojo-oscuro: var(--color-vinotinto);      /* variante oscura de marca */
+  --color-naranja: var(--color-naranja-claro);      /* acento puntual 1 */
+  --color-dorado: var(--color-verde-oscuro);        /* segundo color principal */
+  --color-verde-oliva: var(--color-verde-claro);    /* variante/hover del verde */
+  --color-beige: var(--color-crema);
+  --color-cafe-oscuro: var(--color-vinotinto);
+
+  /* Estados y feedback */
+  --color-error: #d32450;
+  --color-exito: var(--color-verde-oscuro);
+  --color-alerta: var(--color-naranja-oscuro);
+  --color-info: #165d8d;
+
+  /* Sombras, Bordes y Transiciones */
+  --sombra-suave: 0 4px 15px rgba(124, 48, 62, 0.10);
+  --sombra-elevada: 0 10px 25px rgba(124, 48, 62, 0.18);
+  --borde-radio-sm: 8px;
+  --borde-radio-md: 12px;
+  --borde-radio-lg: 20px;
+  --borde-radio-full: 9999px;
+  --transicion: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* Fuentes */
+  --fuente-principal: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --fuente-titulos: 'Outfit', 'Georgia', serif;
+}

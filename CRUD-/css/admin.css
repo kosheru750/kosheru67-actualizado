@@ -1,0 +1,210 @@
+/* Kosheru - Estilos Globales del Panel Administrativo */
+@import url('../../css/variables.css');
+@import url('../../css/reset.css');
+
+body.admin-body {
+  --color-bg-main: #FADCE0;
+  --color-bg-panel: #FADCE0;
+  --color-bg-card: #FFF3EC;
+  --color-texto-blanco: #3B141D;
+  --color-texto-suave: #7C303E;
+  --color-borde-card: #f3c9ce;
+  --color-naranja-terracota: #F9546F;
+  --color-error: #d32450;
+  background-color: var(--color-bg-main, #FADCE0);
+  background-image: linear-gradient(145deg, color-mix(in srgb, var(--color-bg-card) 42%, transparent), transparent 54%);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.admin-sidebar {
+  background: linear-gradient(180deg, var(--color-rojo-oscuro) 0%, var(--color-vinotinto) 100%);
+  color: var(--color-texto-blanco);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+}
+
+.sidebar-brand {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 1.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow-y: auto;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--borde-radio-sm);
+  color: #F9E7E9;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transicion);
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+  background-color: var(--color-rojo-kosheru);
+  color: #ffffff;
+}
+
+.sidebar-footer {
+  padding: 1rem 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-back-store {
+  background-color: var(--color-verde-oscuro) !important;
+  color: #ffffff !important;
+}
+
+.btn-back-store:hover {
+  background-color: var(--color-verde-claro) !important;
+  color: #ffffff !important;
+}
+
+/* Admin Main Content Wrapper */
+.admin-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.admin-navbar {
+  background-color: var(--color-bg-card);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--color-borde-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--sombra-suave);
+}
+
+.admin-content {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(1.25rem, 2.6vw, 2.5rem);
+  flex: 1;
+}
+
+.factura-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid transparent;
+  border-radius: var(--borde-radio-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.badge-completado,
+.badge-enviado {
+  background: color-mix(in srgb, var(--color-exito) 14%, transparent);
+  color: var(--color-exito);
+  border-color: var(--color-exito);
+}
+
+.badge-pendiente,
+.badge-preparando {
+  background: color-mix(in srgb, var(--color-alerta) 14%, transparent);
+  color: var(--color-alerta);
+  border-color: var(--color-alerta);
+}
+
+.badge-cancelado {
+  background: color-mix(in srgb, var(--color-error) 14%, transparent);
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.purchase-status-control {
+  display: grid;
+  justify-items: start;
+  gap: 0.4rem;
+  min-width: 145px;
+}
+
+.purchase-status-select {
+  max-width: 100%;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--color-borde-card);
+  border-radius: var(--borde-radio-sm);
+  background: var(--color-bg-card);
+  color: var(--color-texto-blanco);
+}
+
+.btn-purchase-status {
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--borde-radio-sm);
+  background: var(--color-rojo-kosheru);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.btn-purchase-status:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.admin-page-title {
+  font-family: var(--fuente-titulos);
+  font-size: clamp(1.55rem, 2vw, 2rem);
+  font-weight: 800;
+  color: var(--color-texto-blanco);
+  margin: 0 0 1.5rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.admin-content > .admin-page-title,
+.admin-content > div:has(> .admin-page-title) {
+  position: relative;
+}
+
+.admin-content > .admin-page-title::after,
+.admin-content > div:has(> .admin-page-title)::after {
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 0.75rem;
+  border-radius: 2px;
+  background: var(--color-dorado);
+  content: '';
+}
+
+.admin-content .btn-primary,
+.admin-content .btn-secondary {
+  min-height: 42px;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.admin-content .btn-primary:hover,
+.admin-content .btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--sombra-suave);
+}
+
+.btn-admin-toggle {
+  display: none;
+  font-size: 1.5rem;
+}
